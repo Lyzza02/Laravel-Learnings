@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>{{$heading;}}</h1>
-    {{--empty listing 
-        yun unless parang if statement din cya --}}
+@extends('layout')
+
+{{-- dpt kamatch niya yun sa layout.balde.php --}}
+@section('content')
+
+@include('partials._hero')
+@include('partials._search')
+
+<div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">
+    {{--empty listing yun unless parang if statement din cya --}}
     @unless(count($listings) == 0)
-        @foreach ($listings as $list)
-            <h2> <a href="/listings/{{ $list['id'] }}"> {{ $list['title'] }} </a></h2>
-            <p>  {{ $list['description'] }}</p>
+        @foreach ($listings as $listing)
+        <x-listing-card :listing="$listing"/>
         @endforeach
     @else
         <p>No listings found</p>
     @endunless
-</body>
-</html>
+</div>
+@endsection
