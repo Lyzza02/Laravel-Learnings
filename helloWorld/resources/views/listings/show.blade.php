@@ -1,7 +1,4 @@
-@extends('layout')
-
-{{-- dpt kamatch niya yun sa layout.balde.php --}}
-@section('content')
+<x-layout>
 
 @include('partials._search')
 
@@ -47,12 +44,11 @@
                         target="_blank"
                         class="block bg-black text-white py-2 rounded-xl hover:opacity-80"
                         ><i class="fa-solid fa-globe"></i> Visit
-                        Website</a
-                    >
+                        Website</a>
                 </div>
             </div>
         </div>
     </x-card>
 </div>
 
-@endsection
+</x-layout>
