@@ -12,9 +12,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        // allowing mass asignmenet 
-        // do not need to require fillable
-        Model::unguard();
+        // 
     }
 
     /**
@@ -22,6 +20,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // allowing mass asignmenet 
+        // do not need to require fillable
+        Model::unguard();
     }
 }
